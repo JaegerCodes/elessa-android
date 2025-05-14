@@ -22,13 +22,12 @@ fun HomeScreen() {
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        state.result?.let {
-            UiViewComponent(component = it)
-        }
-
         FadingCircularProgressIndicator(
             modifier = Modifier.align(Alignment.Center),
             isVisible = state.isLoading
         )
+        state.result?.let {
+            UiViewComponent(component = it)
+        }
     }
 }

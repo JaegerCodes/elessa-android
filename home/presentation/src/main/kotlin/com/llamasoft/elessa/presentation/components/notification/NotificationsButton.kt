@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import com.llamasoft.elessa.domain.model.component.buttonwidget.SquaredButtonData
-import com.llamasoft.elessa.presentation.R
+import com.llamasoft.elessa.home.presentation.R
 import com.llamasoft.elessa.presentation.components.button.SquaredButtonContainer
 import com.llamasoft.elessa.ui.status.badge.ElBadgeHighlight
 import com.llamasoft.elessa.ui.status.badge.ElBadgeHighlightStyle

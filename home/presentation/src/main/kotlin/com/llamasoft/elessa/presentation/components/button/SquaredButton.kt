@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import com.llamasoft.elessa.accessibility.getSemanticsProperties
 import com.llamasoft.elessa.model.sdui.ElAccessibility
-import com.llamasoft.elessa.presentation.util.getSemanticsProperties
 
 @Composable
 fun SquaredButtonContainer(

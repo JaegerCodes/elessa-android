@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.airbnb.lottie.LottieAnimationView
-import com.llamasoft.elessa.presentation.R
+import com.llamasoft.elessa.home.presentation.R
 
 @Composable
 fun NotificationsAnimationWidget(

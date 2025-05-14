@@ -136,4 +136,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
 
 [bundles]
 compose-bundle-ui = ["compose-ui", "compose-material", "compose-material-window-size", "compose-tooling-preview"]
-presentation-base = [ "androidx-lifecycleRuntime-ktx", "compose-navigation", "compose-material", "coil" ]
+

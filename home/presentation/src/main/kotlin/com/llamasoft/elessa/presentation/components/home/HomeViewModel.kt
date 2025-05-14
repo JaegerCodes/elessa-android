@@ -4,7 +4,6 @@ import androidx.lifecycle.viewModelScope
 import com.llamasoft.elessa.domain.model.status.Status
 import com.llamasoft.elessa.domain.usecase.GetHomeComponentsUseCase
 import com.llamasoft.elessa.domain.usecase.GetHomeContainerUseCase
-import com.llamasoft.elessa.model.sdui.ElViewComponent
 import com.llamasoft.elessa.presentation.base.BaseViewModel
 import kotlinx.coroutines.launch
 

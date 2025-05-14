@@ -1,12 +1,9 @@
 plugins {
     id("llamasoft.android.library")
-    id("llamasoft.android.compose")
-    id("llamasoft.library.jacoco")
 }
 
 android {
-    namespace = "com.llamasoft.elessa.ui"
-
+    namespace = "com.llamasoft.elessa.accessibility"
     defaultConfig {
 
         consumerProguardFiles("consumer-rules.pro")
@@ -24,8 +21,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.lifecycleRuntime.ktx)
-    implementation(libs.compose.navigation)
-    implementation(libs.material)
-    implementation(libs.coil)
+    implementation(project(":core:model"))
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
 }

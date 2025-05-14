@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.llamasoft.elessa.data"
+    namespace = "com.llamasoft.elessa.home.data"
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")

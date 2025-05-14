@@ -7,15 +7,17 @@ import org.gradle.kotlin.dsl.getByType
 class AndroidPresentationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         pluginManager.apply("llamasoft.android.library")
-        pluginManager.apply("llamasoft.android.compose")
         pluginManager.apply("llamasoft.library.jacoco")
-        pluginManager.apply("org.jetbrains.kotlin.android")
-        //pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
+        pluginManager.apply("llamasoft.android.compose")
+        pluginManager.apply("llamasoft.koin")
+
         val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
         dependencies {
-            libs.findBundle("presentation-base").map {
-                add("implementation", it)
-            }
+            add("implementation", project(":core:model"))
+            add("implementation", project(":core:accessibility"))
+            add("implementation", project(":elessa-ui"))
+            add("implementation", libs.findLibrary("lottie").get())
+            add("implementation", libs.findLibrary("koin-androidx-compose").get())
         }
     }
 }

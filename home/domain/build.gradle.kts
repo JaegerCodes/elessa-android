@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.llamasoft.elessa.domain"
+    namespace = "com.llamasoft.elessa.home.domain"
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")

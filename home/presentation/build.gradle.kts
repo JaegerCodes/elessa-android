@@ -1,12 +1,9 @@
 plugins {
-    id("llamasoft.android.library")
-    id("llamasoft.library.jacoco")
-    id("llamasoft.android.compose")
-    id("llamasoft.koin")
+    id("llamasoft.library.presentation")
 }
 
 android {
-    namespace = "com.llamasoft.elessa.presentation"
+    namespace = "com.llamasoft.elessa.home.presentation"
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
@@ -24,9 +21,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:model"))
-    implementation(project(":elessa-ui"))
     implementation(project(":home:domain"))
-    implementation(libs.koin.androidx.compose)
-    implementation(libs.lottie)
 }
