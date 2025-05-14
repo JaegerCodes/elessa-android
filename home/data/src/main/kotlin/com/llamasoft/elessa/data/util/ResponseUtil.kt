@@ -14,7 +14,7 @@ inline fun <T, R> ElInterceptedResponse<T>.mapSuccessOrError(transform: (T) -> R
     }
 }
 
-inline fun <reified T> Moshi.fromJsonOrThrow(json: String): T {
+inline fun <reified T> Moshi.fromJsonOrError(json: String): T {
     return adapter(T::class.java).fromJson(json)
         ?: error("Failed to parse JSON to ${T::class.java.simpleName}")
 }

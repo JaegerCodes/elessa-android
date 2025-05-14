@@ -24,6 +24,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":elessa-ui"))
     implementation(project(":home:domain"))
     implementation(libs.koin.androidx.compose)
+    implementation(libs.lottie)
 }

@@ -49,6 +49,7 @@ class ElTypographyTokens(
     val numberXxSmallBold: TextStyle,
     val bottomNavLabel: TextStyle,
     val badges: TextStyle,
+    val userID: TextStyle,
 )
 
 internal fun defaultElTypographyTokens(elColorScheme: ElColorScheme) = ElTypographyTokens(
@@ -289,6 +290,13 @@ internal fun defaultElTypographyTokens(elColorScheme: ElColorScheme) = ElTypogra
         color = ElColorPalette.UI_LS_NEUTRAL_800,
         lineHeight = 12.sp
     ),
+    userID = TextStyle(
+        fontFamily = ElFontFamilies.Gibson,
+        fontWeight = FontWeight.Normal,
+        fontSize = 20.sp,
+        color = ElColorPalette.UI_LS_NEUTRAL_800,
+        lineHeight = 24.sp
+    )
 )
 
 fun customTypography(

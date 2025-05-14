@@ -54,6 +54,9 @@ kotlinTestVersion = "1.9.22"
 koinTestVersion = "3.5.3"
 runtimeVersion = "1.8.1"
 
+# Lottie
+lottieVersion = "3.4.0"
+
 [libraries]
 # Android
 androidx-lifecycleRuntime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxVersion" }
@@ -71,6 +74,9 @@ compose-ui = { module = "androidx.compose.ui:ui" }
 
 # Coil
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coilVersion" }
+
+# Lottie
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottieVersion" }
 
 # Moshi
 moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshiVersion" }

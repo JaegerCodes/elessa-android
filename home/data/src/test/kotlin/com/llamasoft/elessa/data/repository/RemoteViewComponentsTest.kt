@@ -49,10 +49,10 @@ class RemoteViewComponentsTest : KoinTest {
         every { responseBody.string() } returns jsonHomeContainerData
 
         val successResponse = ElInterceptedResponse.Success(responseBody, 200, mockk(), mockk())
-        coEvery { service.getViewComponents() } returns successResponse
+        coEvery { service.getHomeContainer() } returns successResponse
 
         // Ejecutar el método y verificar resultado
-        val result = remoteViewComponents.getViewComponents()
+        val result = remoteViewComponents.getHomeContainer()
 
         assertNotNull(result)
         assertEquals("https://jsonblob.com/api/1357722897715748864", result.data?.contentUrl)
@@ -66,9 +66,9 @@ class RemoteViewComponentsTest : KoinTest {
         val responseBody = mockk<ResponseBody>()
         every { responseBody.string() } returns jsonHomeContainerChildren
         val successResponse = ElInterceptedResponse.Success(responseBody, 200, mockk(), mockk())
-        coEvery { service.getViewComponents() } returns successResponse
+        coEvery { service.getHomeContainer() } returns successResponse
 
-        val result = remoteViewComponents.getViewComponents()
+        val result = remoteViewComponents.getHomeContainer()
 
         val child = result.children?.firstOrNull()
         assertNotNull(child)
@@ -84,9 +84,9 @@ class RemoteViewComponentsTest : KoinTest {
         val responseBody = mockk<ResponseBody>()
         every { responseBody.string() } returns jsonHomeContainerActions
         val successResponse = ElInterceptedResponse.Success(responseBody, 200, mockk(), mockk())
-        coEvery { service.getViewComponents() } returns successResponse
+        coEvery { service.getHomeContainer() } returns successResponse
 
-        val result = remoteViewComponents.getViewComponents()
+        val result = remoteViewComponents.getHomeContainer()
 
         val actions = result.properties?.initActions
         assertNotNull(actions)

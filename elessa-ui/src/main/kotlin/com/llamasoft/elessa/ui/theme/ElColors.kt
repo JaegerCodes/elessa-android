@@ -36,11 +36,16 @@ class ElColorScheme(
     val outline: Color,
     val outlineVariant: Color,
 
+    val surfaceVariant: Color,
+
     val disableContainer: Color,
     val onDisableContainer: Color,
 
     val lowContainer: Color,
     val onLowContainer: Color,
+
+    val success: Color,
+    val info: Color,
 )
 
 fun customColorScheme(
@@ -109,6 +114,8 @@ internal val elLightColorScheme = ElColorScheme(
     primaryContainerVariant = ElColorPalette.UI_LS_PRIMARY_500,
     onPrimaryContainerVariant = ElColorPalette.UI_LS_PRIMARY_800,
 
+    surfaceVariant = ElColorPalette.UI_LS_NEUTRAL_300,
+
     secondary = ElColorPalette.UI_LS_SECONDARY_600,
     onSecondary = ElColorPalette.UI_LS_NEUTRAL_100,
 
@@ -133,6 +140,9 @@ internal val elLightColorScheme = ElColorScheme(
     onSurface = ElColorPalette.UI_LS_NEUTRAL_800,
     outline = ElColorPalette.UI_LS_NEUTRAL_400,
     outlineVariant = ElColorPalette.UI_LS_NEUTRAL_300,
+
+    success = ElColorPalette.UI_LS_SUCCESS_600,
+    info = ElColorPalette.UI_LS_INFO_600,
 )
 
 /**
