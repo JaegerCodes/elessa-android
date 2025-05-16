@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation(project(":core:testing"))
     implementation(project(":core:network"))
+    implementation(project(":core:navigation"))
     implementation(project(":elessa-ui"))
     // Home
     implementation(project(":home:data"))
@@ -44,7 +45,6 @@ dependencies {
     //implementation(project(":checkout"))
 
     implementation(libs.androidx.lifecycleRuntime.ktx)
-    implementation(libs.compose.navigation)
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)

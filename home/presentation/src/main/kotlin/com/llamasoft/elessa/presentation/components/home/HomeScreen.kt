@@ -30,4 +30,5 @@ fun HomeScreen() {
             UiViewComponent(component = it)
         }
     }
+    ActionCommands()
 }

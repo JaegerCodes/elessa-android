@@ -22,8 +22,6 @@ import com.llamasoft.elessa.ui.theme.ElColorPalette
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 import com.llamasoft.elessa.ui.theme.LocalElTypography
 
-const val BadgeTestTag = "BadgeTestTag"
-
 @Composable
 fun ElBadge(
     title: String,
@@ -45,7 +43,7 @@ fun ElBadge(
                 )
                 .wrapContentSize(Alignment.Center)
                 .padding(horizontal = 12.dp, vertical = 2.dp)
-                .testTag(BadgeTestTag)
+                .testTag("BadgeTestTag")
         ) {
             Text(
                 text = title,

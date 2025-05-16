@@ -15,6 +15,7 @@ class AndroidPresentationConventionPlugin : Plugin<Project> {
         dependencies {
             add("implementation", project(":core:model"))
             add("implementation", project(":core:accessibility"))
+            add("implementation", project(":core:navigation"))
             add("implementation", project(":elessa-ui"))
             add("implementation", libs.findLibrary("lottie").get())
             add("implementation", libs.findLibrary("koin-androidx-compose").get())
