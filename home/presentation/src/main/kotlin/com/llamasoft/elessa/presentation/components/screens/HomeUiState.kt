@@ -1,4 +1,4 @@
-package com.llamasoft.elessa.presentation.components.home
+package com.llamasoft.elessa.presentation.components.screens
 
 import com.llamasoft.elessa.domain.model.status.Status
 import com.llamasoft.elessa.model.sdui.ElViewComponent

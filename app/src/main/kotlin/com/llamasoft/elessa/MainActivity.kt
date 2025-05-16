@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.llamasoft.elessa.presentation.components.home.MainScreen
+import com.llamasoft.elessa.presentation.components.navigation.MainScreen
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
 class MainActivity : ComponentActivity() {

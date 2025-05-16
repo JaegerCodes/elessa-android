@@ -3,7 +3,7 @@ package com.llamasoft.elessa.presentation.components.shimmer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import com.llamasoft.elessa.presentation.components.home.HomeViewModel
+import com.llamasoft.elessa.presentation.components.screens.HomeViewModel
 import com.llamasoft.elessa.presentation.factory.UiViewComponent
 import org.koin.androidx.compose.koinViewModel
 

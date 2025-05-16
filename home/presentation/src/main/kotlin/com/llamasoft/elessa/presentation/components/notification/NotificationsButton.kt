@@ -8,7 +8,6 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import com.llamasoft.elessa.domain.model.component.buttonwidget.SquaredButtonData
 import com.llamasoft.elessa.home.presentation.R
-import com.llamasoft.elessa.presentation.action.executeAll
 import com.llamasoft.elessa.presentation.command.ActionCommandViewModel
 import com.llamasoft.elessa.presentation.components.button.SquaredButtonContainer
 import com.llamasoft.elessa.ui.status.badge.ElBadgeHighlight
@@ -29,7 +28,7 @@ fun NotificationButton(
             accessibility = data?.accessibility,
             buttonTag = "NotificationButtonTagTest",
             onClick = {
-                data?.actions?.executeAll(commandViewModel)
+                commandViewModel.dispatchAll(data?.actions)
             }
         ) {
             NotificationsAnimationWidget(

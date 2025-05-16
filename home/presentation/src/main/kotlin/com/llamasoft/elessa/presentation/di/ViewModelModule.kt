@@ -1,6 +1,6 @@
 package com.llamasoft.elessa.presentation.di
 
-import com.llamasoft.elessa.presentation.components.home.HomeViewModel
+import com.llamasoft.elessa.presentation.components.screens.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
