@@ -1,4 +1,4 @@
-package com.llamasoft.elessa.presentation.components.screens
+package com.llamasoft.elessa.presentation.components.screen
 
 import androidx.lifecycle.viewModelScope
 import com.llamasoft.elessa.domain.usecase.GetHomeComponentsUseCase

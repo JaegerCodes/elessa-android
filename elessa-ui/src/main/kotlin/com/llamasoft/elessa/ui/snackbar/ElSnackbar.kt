@@ -15,12 +15,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 import com.llamasoft.elessa.ui.theme.LocalElDimens
 import kotlinx.coroutines.delay
@@ -40,8 +42,9 @@ fun ElSnackbar(
 
     Surface(
         modifier = modifier
+            .shadow(1.dp, shape = MaterialTheme.shapes.large)
             .clip(MaterialTheme.shapes.large),
-        color = MaterialTheme.colorScheme.surface
+        color = MaterialTheme.colorScheme.primaryContainer
     ) {
         FlowRow(
             modifier = Modifier.padding(dimens.spacing.medium),
@@ -80,11 +83,16 @@ fun ElSnackbar(
 
 private val AUTO_CLOSE_TIME_RANGE = 4.0..15.0
 
-@Preview
+@Preview(
+    showBackground = true,
+    heightDp = 80,
+    widthDp = 400
+)
 @Composable
 fun ElSnackbarPreview() {
     ElessaTheme {
         ElSnackbar(
+            modifier = Modifier.padding(16.dp),
             text = "This is a snackbar",
             autoCloseTime = 4.0,
             accessibilityText = {
@@ -92,5 +100,4 @@ fun ElSnackbarPreview() {
             }
         )
     }
-
 }

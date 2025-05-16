@@ -1,6 +1,8 @@
 package com.llamasoft.elessa.presentation.command
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.airbnb.lottie.BuildConfig
 import com.llamasoft.elessa.model.sdui.ElAction
 import com.llamasoft.elessa.presentation.factory.CommandActionFactory
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -25,8 +27,11 @@ class ActionCommandViewModel(
         actions.forEach { _actions.emit(it) }
     }
 
-    fun <T : ElAction> execute(action: T): Boolean {
-        return commandFactory.getCommandFor(action)?.execute(action) ?: false
+    fun <T : ElAction> execute(action: T) {
+        val handled = commandFactory.getCommandFor(action)?.execute(action) ?: false
+        if (!handled && BuildConfig.DEBUG) {
+            Log.w("ActionCommands", "Command not handled: ${action.type}")
+        }
     }
 
     inline fun <reified C : CommandAction<*>> getCommand(): C {

@@ -12,9 +12,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
-import com.llamasoft.elessa.presentation.components.screens.DEEPLINK_HOME
-import com.llamasoft.elessa.presentation.components.screens.HomeScreen
-import com.llamasoft.elessa.presentation.components.screens.NAVIGATION_ROUTE_HOME
+import com.llamasoft.elessa.presentation.components.screen.DEEPLINK_HOME
+import com.llamasoft.elessa.presentation.components.screen.HomeScreen
+import com.llamasoft.elessa.presentation.components.screen.NAVIGATION_ROUTE_HOME
 
 @Composable
 fun AppNavHost(

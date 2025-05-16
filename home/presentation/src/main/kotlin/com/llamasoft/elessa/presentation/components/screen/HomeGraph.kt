@@ -1,4 +1,4 @@
-package com.llamasoft.elessa.presentation.components.screens
+package com.llamasoft.elessa.presentation.components.screen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
