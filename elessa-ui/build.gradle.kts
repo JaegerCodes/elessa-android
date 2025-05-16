@@ -27,5 +27,5 @@ dependencies {
     implementation(libs.androidx.lifecycleRuntime.ktx)
     implementation(libs.compose.navigation)
     implementation(libs.material)
-    implementation(libs.coil)
+    api(libs.coil)
 }

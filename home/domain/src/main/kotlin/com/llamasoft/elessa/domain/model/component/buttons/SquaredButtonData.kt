@@ -1,4 +1,4 @@
-package com.llamasoft.elessa.domain.model.component.buttonwidget
+package com.llamasoft.elessa.domain.model.component.buttons
 
 import androidx.annotation.Keep
 import com.llamasoft.elessa.model.sdui.ElAccessibility

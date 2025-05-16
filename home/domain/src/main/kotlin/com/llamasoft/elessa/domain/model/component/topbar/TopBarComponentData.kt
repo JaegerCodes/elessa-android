@@ -1,7 +1,7 @@
 package com.llamasoft.elessa.domain.model.component.topbar
 
 import androidx.annotation.Keep
-import com.llamasoft.elessa.domain.model.component.buttonwidget.SquaredButtonData
+import com.llamasoft.elessa.domain.model.component.buttons.SquaredButtonData
 import com.llamasoft.elessa.model.sdui.ElComponentData
 import com.squareup.moshi.Json
 

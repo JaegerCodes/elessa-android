@@ -6,7 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
-import com.llamasoft.elessa.domain.model.component.buttonwidget.SquaredButtonData
+import com.llamasoft.elessa.domain.model.component.buttons.SquaredButtonData
 import com.llamasoft.elessa.home.presentation.R
 import com.llamasoft.elessa.presentation.command.ActionCommandViewModel
 import com.llamasoft.elessa.presentation.components.button.SquaredButtonContainer

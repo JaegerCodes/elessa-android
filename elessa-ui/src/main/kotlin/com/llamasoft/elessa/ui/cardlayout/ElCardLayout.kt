@@ -38,6 +38,7 @@ import com.llamasoft.elessa.ui.theme.ElessaTheme
 @Composable
 fun ElCardLayout(
     modifier: Modifier = Modifier,
+    size: ElCardSize? = null,
     title: String? = null,
     titleStyle: TextStyle = MaterialTheme.typography.headlineMedium,
     titleMaxLines: Int = 2,
@@ -47,9 +48,9 @@ fun ElCardLayout(
     isClickable: Boolean = true,
     cardType: ElCardStyleType = ElCardStyleType.Medium,
     accessibility: (SemanticsPropertyReceiver.() -> Unit)? = null,
-    icon: @Composable (() -> Unit)? = null,
-    pill: @Composable (() -> Unit)? = null,
-    badge: @Composable (() -> Unit)? = null,
+    icon: @Composable() (() -> Unit)? = null,
+    pill: @Composable() (() -> Unit)? = null,
+    badge: @Composable() (() -> Unit)? = null,
     onClick: (() -> Unit)? = null
 ) {
     val style = cardType.tokens()
@@ -71,10 +72,14 @@ fun ElCardLayout(
             StyledCardContent(
                 title = title,
                 titleStyle = titleStyle,
-                titleMaxLines = titleMaxLines,
+                titleMaxLines = size?.let {
+                    size.defaultTitleMaxLines()
+                } ?: titleMaxLines,
                 subtitle = subtitle,
                 subtitleStyle = subtitleStyle,
-                subtitleMaxLines = subtitleMaxLines,
+                subtitleMaxLines = size?.let {
+                    size.defaultSubtitleMaxLines()
+                } ?: subtitleMaxLines,
                 icon = icon,
                 pill = pill,
                 cardStyle = cardType
@@ -205,21 +210,21 @@ private fun PreviewXLCard(
             ) {
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Disabled,
-                    subtitleMaxLines = 4,
                     title = testText,
                     subtitle = testText,
+                    subtitleMaxLines = 4,
+                    cardType = ElCardStyleType.Disabled,
+                    icon = { image() },
                     badge = {
                         //EqBadge(title = "Warning", state = "warning")
-                    },
-                    icon = { image() }
+                    }
                 )
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Medium,
-                    subtitleMaxLines = 4,
                     title = testText,
                     subtitle = testText,
+                    subtitleMaxLines = 4,
+                    cardType = ElCardStyleType.Medium,
                     icon = {
                         image()
                     }
@@ -231,25 +236,27 @@ private fun PreviewXLCard(
             ) {
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Low,
-                    subtitleMaxLines = 4,
                     title = testText,
                     subtitle = testText,
+                    subtitleMaxLines = 4,
+                    cardType = ElCardStyleType.Low,
                     icon = {
                         image()
-                    })
+                    }
+                )
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.High,
-                    subtitleMaxLines = 4,
                     title = testText,
                     subtitle = testText,
+                    subtitleMaxLines = 4,
+                    cardType = ElCardStyleType.High,
                     icon = {
                         image()
                     },
                     pill = {
                         //EqPill(title = "60% descuento", color = Color.Red)
-                    })
+                    }
+                )
             }
         }
     }
@@ -282,27 +289,29 @@ private fun PreviewMCard(
             ) {
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Disabled,
-                    subtitleMaxLines = 2,
                     title = testText,
                     titleMaxLines = 1,
                     subtitle = testText,
+                    subtitleMaxLines = 2,
+                    cardType = ElCardStyleType.Disabled,
                     icon = {
                         image()
                     },
                     badge = {
                         ElBadge(title = "Warning", state = "warning")
-                    })
+                    }
+                )
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Medium,
-                    subtitleMaxLines = 2,
-                    titleMaxLines = 1,
                     title = testText,
+                    titleMaxLines = 1,
                     subtitle = testText,
+                    subtitleMaxLines = 2,
+                    cardType = ElCardStyleType.Medium,
                     icon = {
                         image()
-                    })
+                    }
+                )
             }
             Column(
                 modifier = Modifier.padding(8.dp),
@@ -310,27 +319,29 @@ private fun PreviewMCard(
             ) {
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.Low,
-                    subtitleMaxLines = 2,
-                    titleMaxLines = 1,
                     title = testText,
+                    titleMaxLines = 1,
                     subtitle = testText,
+                    subtitleMaxLines = 2,
+                    cardType = ElCardStyleType.Low,
                     icon = {
                         image()
-                    })
+                    }
+                )
                 ElCardLayout(
                     modifier = Modifier.width(width),
-                    cardType = ElCardStyleType.High,
-                    subtitleMaxLines = 2,
-                    titleMaxLines = 1,
                     title = testText,
+                    titleMaxLines = 1,
                     subtitle = testText,
+                    subtitleMaxLines = 2,
+                    cardType = ElCardStyleType.High,
                     icon = {
                         image()
                     },
                     pill = {
                         ElPill(title = "60% descuento", color = Color.Red)
-                    })
+                    }
+                )
             }
         }
     }

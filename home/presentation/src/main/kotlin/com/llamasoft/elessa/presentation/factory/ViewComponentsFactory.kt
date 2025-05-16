@@ -1,10 +1,12 @@
 package com.llamasoft.elessa.presentation.factory
 
 import com.llamasoft.elessa.domain.model.component.homecontainer.HomeContainerComponent
+import com.llamasoft.elessa.domain.model.component.shimmer.SectionTitleShimmerComponent
 import com.llamasoft.elessa.domain.model.component.shimmer.TopBarShimmerComponent
 import com.llamasoft.elessa.domain.model.component.topbar.TopBarComponent
 import com.llamasoft.elessa.model.sdui.ElViewComponent
 import com.llamasoft.elessa.presentation.components.container.HomeContainerViewComponent
+import com.llamasoft.elessa.presentation.components.section.SectionTitleShimmerViewComponent
 import com.llamasoft.elessa.presentation.components.topbar.TopBarShimmerViewComponent
 import com.llamasoft.elessa.presentation.components.topbar.TopBarViewComponent
 import kotlin.reflect.KClass
@@ -14,6 +16,7 @@ class ViewComponentsFactory {
         register<HomeContainerComponent> { HomeContainerViewComponent(it) }
         register<TopBarShimmerComponent> { TopBarShimmerViewComponent(it) }
         register<TopBarComponent> { TopBarViewComponent(it) }
+        register<SectionTitleShimmerComponent> { SectionTitleShimmerViewComponent(it) }
     }
 
     fun create(component: ElViewComponent): ViewComponent? {

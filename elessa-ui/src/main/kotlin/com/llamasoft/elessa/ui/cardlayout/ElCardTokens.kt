@@ -6,7 +6,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.llamasoft.elessa.ui.theme.ElColorPalette
 import com.llamasoft.elessa.ui.theme.LocalElColors
 
 sealed class ElCardStyleType {
@@ -14,7 +13,6 @@ sealed class ElCardStyleType {
     data object Low: ElCardStyleType()
     data object Medium: ElCardStyleType()
     data object High : ElCardStyleType()
-    data object Closeable : ElCardStyleType()
 }
 
 class ElCardTokens(
@@ -62,16 +60,12 @@ fun ElCardStyleType.tokens(): ElCardTokens {
             textColor = colors.onTertiary,
             elevation = 4.dp
         )
-        ElCardStyleType.Closeable -> ElCardTokens(
-            backgroundBrush = Brush.linearGradient(
-                colors = listOf(
-                    ElColorPalette.UI_LS_PRIMARY_500,
-                    ElColorPalette.UI_LS_PRIMARY_500,
-                    ElColorPalette.UI_LS_PRIMARY_500
-                )
-            ),
-            textColor = Color.White,
-            elevation = 4.dp
-        )
     }
+}
+
+fun String?.toCardStyleType(): ElCardStyleType = when (this?.lowercase()) {
+    "low" -> ElCardStyleType.Low
+    "medium" -> ElCardStyleType.Medium
+    "high" -> ElCardStyleType.High
+    else -> ElCardStyleType.Disabled
 }

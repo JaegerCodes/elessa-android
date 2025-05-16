@@ -17,7 +17,9 @@ import com.llamasoft.elessa.ui.R
 @Immutable
 class ElTypographyTokens(
     val headingLarge: TextStyle,
+    val headingLargeBold: TextStyle,
     val headingMedium: TextStyle,
+    val headingMediumBold: TextStyle,
     val headingSmall: TextStyle,
     val headingXSmall: TextStyle,
     val bodyMedium: TextStyle,
@@ -60,7 +62,21 @@ internal fun defaultElTypographyTokens(elColorScheme: ElColorScheme) = ElTypogra
         letterSpacing = 0.sp,
         color = elColorScheme.onPrimaryContainerVariant,
     ),
+    headingLargeBold = TextStyle(
+        fontFamily = ElFontFamilies.Gibson,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        letterSpacing = 0.sp,
+        color = elColorScheme.onPrimaryContainerVariant,
+    ),
     headingMedium = TextStyle(
+        fontFamily = ElFontFamilies.Gibson,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        letterSpacing = 0.sp,
+        color = elColorScheme.onPrimaryContainerVariant,
+    ),
+    headingMediumBold = TextStyle(
         fontFamily = ElFontFamilies.Gibson,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp,

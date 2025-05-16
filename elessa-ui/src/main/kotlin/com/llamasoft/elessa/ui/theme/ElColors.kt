@@ -24,6 +24,8 @@ class ElColorScheme(
     val onSecondaryContainer: Color,
     val secondaryContainerVariant: Color,
 
+    val tertiaryContainer: Color,
+
     val tertiary: Color,
     val onTertiary: Color,
 
@@ -67,7 +69,7 @@ fun customColorScheme(
     tertiary = elColorScheme.tertiary,
     onTertiary = elColorScheme.onTertiary,
 
-    tertiaryContainer = ElColorPalette.UI_LS_INFO_200,
+    tertiaryContainer = elColorScheme.tertiaryContainer,
     onTertiaryContainer = ElColorPalette.UI_LS_NEUTRAL_800,
 
     background = ElColorPalette.UI_LS_NEUTRAL_200,
@@ -112,7 +114,7 @@ internal val elLightColorScheme = ElColorScheme(
     primaryContainer = ElColorPalette.UI_LS_PRIMARY_200,
     onPrimaryContainer = ElColorPalette.UI_LS_NEUTRAL_900,
     primaryContainerVariant = ElColorPalette.UI_LS_PRIMARY_500,
-    onPrimaryContainerVariant = ElColorPalette.UI_LS_PRIMARY_800,
+    onPrimaryContainerVariant = ElColorPalette.UI_LS_NEUTRAL_800,
 
     surfaceVariant = ElColorPalette.UI_LS_NEUTRAL_300,
 
@@ -122,6 +124,8 @@ internal val elLightColorScheme = ElColorScheme(
     secondaryContainer = ElColorPalette.UI_LS_SECONDARY_200,
     onSecondaryContainer = ElColorPalette.UI_LS_SECONDARY_700,
     secondaryContainerVariant = ElColorPalette.UI_LS_SECONDARY_500,
+
+    tertiaryContainer = ElColorPalette.UI_LS_PRIMARY_100,
 
     tertiary = ElColorPalette.UI_LS_INFO_600,
     onTertiary = ElColorPalette.UI_LS_NEUTRAL_200,
@@ -142,7 +146,7 @@ internal val elLightColorScheme = ElColorScheme(
     outlineVariant = ElColorPalette.UI_LS_NEUTRAL_300,
 
     success = ElColorPalette.UI_LS_SUCCESS_600,
-    info = ElColorPalette.UI_LS_INFO_600,
+    info = ElColorPalette.UI_LS_INFO_600
 )
 
 /**
