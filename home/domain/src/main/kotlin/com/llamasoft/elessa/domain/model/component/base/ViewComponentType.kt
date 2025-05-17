@@ -12,6 +12,8 @@ import androidx.annotation.StringDef
     ViewComponentType.SECTION_TITLE,
     ViewComponentType.SECTION_TITLE_SHIMMER_COMPONENT,
     ViewComponentType.CARD_BANNER_COMPONENT,
+    ViewComponentType.CARD_BANNER_XL_SHIMMER_COMPONENT,
+    ViewComponentType.CARD_BANNER_M_SHIMMER_COMPONENT
 )
 annotation class ViewComponentType {
     companion object {
@@ -21,6 +23,7 @@ annotation class ViewComponentType {
         const val SECTION_TITLE = "SectionTitle"
         const val SECTION_TITLE_SHIMMER_COMPONENT = "SectionTitleShimmerWidget"
         const val CARD_BANNER_COMPONENT = "CardBannerWidget"
-        const val CARD_BANNER_SHIMMER_COMPONENT = "CardBannerShimmerWidget"
+        const val CARD_BANNER_XL_SHIMMER_COMPONENT = "CardBannerXLShimmerWidget"
+        const val CARD_BANNER_M_SHIMMER_COMPONENT = "CardBannerMShimmerWidget"
     }
 }

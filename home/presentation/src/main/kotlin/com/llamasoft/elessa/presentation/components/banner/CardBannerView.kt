@@ -1,9 +1,13 @@
 package com.llamasoft.elessa.presentation.components.banner
 
-import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -16,6 +20,7 @@ import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerData
 import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerProperties
 import com.llamasoft.elessa.domain.model.component.common.BadgeData
 import com.llamasoft.elessa.ui.cardlayout.ElCardLayout
+import com.llamasoft.elessa.ui.cardlayout.defaultImageSize
 import com.llamasoft.elessa.ui.cardlayout.defaultSubtitleMaxLines
 import com.llamasoft.elessa.ui.cardlayout.defaultTitleMaxLines
 import com.llamasoft.elessa.ui.cardlayout.toCardSize
@@ -28,45 +33,52 @@ import com.llamasoft.elessa.ui.theme.ElessaTheme
 fun CardBannerView(component: CardBannerComponent) {
     val data = component.data
     val size = component.properties?.size.toCardSize()
-    val image: @Composable () -> Unit = {
+
+    val networkImage: @Composable (() -> Unit) = {
         AsyncImage(
             model = data?.icon,
             contentDescription = null,
             modifier = Modifier
-                .defaultMinSize(64.dp)
-                .clip(RoundedCornerShape(12.dp)),
+                .clip(RoundedCornerShape(16.dp))
+                .size(size.defaultImageSize().dp)
+                .aspectRatio(0.8f),
             contentScale = ContentScale.Crop
         )
     }
 
-    ElCardLayout(
-        titleMaxLines = size.defaultTitleMaxLines(),
-        subtitleMaxLines = size.defaultSubtitleMaxLines(),
-        title = data?.title,
-        subtitle = data?.subtitle,
-        cardType = component.properties?.style.toCardStyleType(),
-        icon = {
-            image()
-        },
-        pill = {
-            data?.pill?.let { pill ->
-                ElPill(
-                    title = pill.text.orEmpty(),
-                    color = Color.Red
-                )
-            }
-        },
-        badge = {
-            data?.badge?.let { badge ->
-                ElBadge(title = badge.text.orEmpty(), state = "warning")
-            }
-        },
-    )
+    Box(
+        modifier = Modifier
+            .padding(bottom = 2.dp)
+    ) {
+        ElCardLayout(
+            titleMaxLines = size.defaultTitleMaxLines(),
+            subtitleMaxLines = size.defaultSubtitleMaxLines(),
+            title = data?.title,
+            subtitle = data?.subtitle,
+            cardType = component.properties?.style.toCardStyleType(),
+            icon = {
+                networkImage()
+            },
+            pill = {
+                data?.pill?.let { pill ->
+                    ElPill(
+                        title = pill.text.orEmpty(),
+                        color = Color.Red
+                    )
+                }
+            },
+            badge = {
+                data?.badge?.let { badge ->
+                    ElBadge(title = badge.text.orEmpty(), state = "warning")
+                }
+            },
+        )
+    }
 }
 
 @Preview(
     showBackground = true,
-    widthDp = 290
+    widthDp = 320
 )
 @Composable
 fun PreviewCardBannerView() {
@@ -88,16 +100,23 @@ fun PreviewCardBannerView() {
     )
     val data = component.data
     val size = component.properties?.size.toCardSize()
-
-    val image: @Composable () -> Unit = {
-        AsyncImage(
-            model = data?.icon,
-            contentDescription = null,
+    val networkImage: @Composable (() -> Unit) = {
+        Box(
             modifier = Modifier
-                .size(64.dp)
-                .clip(RoundedCornerShape(12.dp)),
-            contentScale = ContentScale.Crop
-        )
+                .clip(RoundedCornerShape(16.dp))
+                .background(Color.Black.copy(alpha = 0.2f))
+                .size(120.dp)
+                .aspectRatio(0.8f),
+            contentAlignment = Alignment.Center
+        ) {
+            AsyncImage(
+                model = data?.icon,
+                contentDescription = null,
+                modifier = Modifier
+                    .clip(RoundedCornerShape(16.dp)),
+                contentScale = ContentScale.Crop
+            )
+        }
     }
 
     ElessaTheme {
@@ -108,7 +127,7 @@ fun PreviewCardBannerView() {
             subtitle = data?.subtitle,
             cardType = component.properties?.style.toCardStyleType(),
             icon = {
-                image()
+                networkImage()
             },
             pill = {
                 data?.pill?.let { pill ->

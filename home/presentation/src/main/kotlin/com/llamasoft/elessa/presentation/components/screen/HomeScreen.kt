@@ -54,7 +54,7 @@ fun HomeScreen() {
                 )
             }
         },
-        contentWindowInsets = WindowInsets(0.dp, 2.dp, 0.dp, 0.dp)
+        contentWindowInsets = WindowInsets(left = 0.dp, top = 0.dp, right = 0.dp, bottom = 0.dp)
     ) { padding ->
         SwipeToRefreshBox(
             isRefreshing = state.isLoading,

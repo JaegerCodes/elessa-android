@@ -9,6 +9,6 @@ data class CardBannerViewComponent(
 ) : ViewComponent {
     @Composable
     override fun Render() {
-        CardBannerView(component = component)
+        CardBannerView(component)
     }
 }

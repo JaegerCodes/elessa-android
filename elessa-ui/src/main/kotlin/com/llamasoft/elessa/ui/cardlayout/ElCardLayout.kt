@@ -40,16 +40,16 @@ fun ElCardLayout(
     modifier: Modifier = Modifier,
     title: String? = null,
     titleStyle: TextStyle = MaterialTheme.typography.headlineMedium,
-    titleMaxLines: Int = 2,
+    titleMaxLines: Int = 1,
     subtitle: String? = null,
     subtitleStyle: TextStyle = MaterialTheme.typography.bodyMedium,
     subtitleMaxLines: Int = 2,
     isClickable: Boolean = true,
     cardType: ElCardStyleType = ElCardStyleType.Medium,
     accessibility: (SemanticsPropertyReceiver.() -> Unit)? = null,
-    icon: @Composable() (() -> Unit)? = null,
-    pill: @Composable() (() -> Unit)? = null,
-    badge: @Composable() (() -> Unit)? = null,
+    icon: @Composable (() -> Unit)? = null,
+    pill: @Composable (() -> Unit)? = null,
+    badge: @Composable (() -> Unit)? = null,
     onClick: (() -> Unit)? = null
 ) {
     val style = cardType.tokens()
@@ -61,7 +61,9 @@ fun ElCardLayout(
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(style.elevation),
         enabled = isClickable,
-        onClick = { onClick?.run { invoke() } }
+        onClick = {
+            onClick?.run { invoke() }
+        }
     ) {
         Box(
             modifier = Modifier

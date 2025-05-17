@@ -23,7 +23,6 @@ fun TopBarView(
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, bottom = 12.dp, top = 16.dp)
             .fillMaxWidth()
     ) {
         Text(

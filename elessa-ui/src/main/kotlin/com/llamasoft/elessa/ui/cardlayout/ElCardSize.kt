@@ -4,6 +4,13 @@ enum class ElCardSize {
     M, L, XL
 }
 
+fun ElCardSize.defaultImageSize(): Int = when (this) {
+    ElCardSize.M -> 90
+    ElCardSize.L -> 160
+    ElCardSize.XL -> 160
+}
+
+
 fun ElCardSize.defaultTitleMaxLines(): Int = when (this) {
     ElCardSize.M -> 1
     ElCardSize.L -> 2

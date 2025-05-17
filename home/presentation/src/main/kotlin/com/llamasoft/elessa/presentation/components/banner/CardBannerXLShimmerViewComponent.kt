@@ -7,28 +7,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.llamasoft.elessa.domain.model.component.shimmer.CardBannerShimmerComponent
+import com.llamasoft.elessa.domain.model.component.shimmer.CardBannerXLShimmerComponent
 import com.llamasoft.elessa.presentation.components.shimmer.ShimmerUtils
 import com.llamasoft.elessa.presentation.components.shimmer.ViewOrShimmer
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
-data class CardBannerShimmerViewComponent(
-    val component: CardBannerShimmerComponent
+data class CardBannerXLShimmerViewComponent(
+    val component: CardBannerXLShimmerComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {
         ViewOrShimmer(shimmerId = component.shimmerId) {
-            CardBannerShimmerView()
+            CardBannerXLShimmerView()
         }
     }
 }
 
 @Composable
-private fun CardBannerShimmerView() {
+private fun CardBannerXLShimmerView() {
     ShimmerUtils.GetShimmerBlockTitle(
         modifier = Modifier
-            .padding(horizontal = 16.dp)
+            .padding(bottom = 2.dp)
             .fillMaxWidth()
             .height(210.dp),
         roundedSize = 16.dp
@@ -39,8 +39,8 @@ private fun CardBannerShimmerView() {
     showBackground = true
 )
 @Composable
-fun SectionTitleShimmerViewPreview() {
+private fun CardBannerXLShimmerViewPreview() {
     ElessaTheme {
-        CardBannerShimmerView()
+        CardBannerXLShimmerView()
     }
 }
