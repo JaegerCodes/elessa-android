@@ -26,13 +26,14 @@ import com.llamasoft.elessa.ui.theme.LocalElTypography
 
 @Composable
 fun ElPill(
+    modifier: Modifier = Modifier,
     title: String,
     color: Color,
     accessibilityText: String? = null
 ) {
     val typography = LocalElTypography.current
     Row(
-        modifier = Modifier.wrapContentSize()
+        modifier = modifier.wrapContentSize()
     ) {
         Box(
             modifier = Modifier

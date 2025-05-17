@@ -6,10 +6,6 @@ import java.io.Serializable
 
 @Keep
 data class BadgeData(
-    @Json(name = "color")
-    val color: String? = null,
     @Json(name = "text")
-    val text: String? = null,
-    @Json(name = "textColor")
-    val textColor: String? = null
+    val text: String? = null
 ) : Serializable

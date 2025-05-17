@@ -38,7 +38,6 @@ import com.llamasoft.elessa.ui.theme.ElessaTheme
 @Composable
 fun ElCardLayout(
     modifier: Modifier = Modifier,
-    size: ElCardSize? = null,
     title: String? = null,
     titleStyle: TextStyle = MaterialTheme.typography.headlineMedium,
     titleMaxLines: Int = 2,
@@ -72,14 +71,10 @@ fun ElCardLayout(
             StyledCardContent(
                 title = title,
                 titleStyle = titleStyle,
-                titleMaxLines = size?.let {
-                    size.defaultTitleMaxLines()
-                } ?: titleMaxLines,
+                titleMaxLines = titleMaxLines,
                 subtitle = subtitle,
                 subtitleStyle = subtitleStyle,
-                subtitleMaxLines = size?.let {
-                    size.defaultSubtitleMaxLines()
-                } ?: subtitleMaxLines,
+                subtitleMaxLines = subtitleMaxLines,
                 icon = icon,
                 pill = pill,
                 cardStyle = cardType
