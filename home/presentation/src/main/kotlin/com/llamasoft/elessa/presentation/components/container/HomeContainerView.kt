@@ -1,5 +1,6 @@
 package com.llamasoft.elessa.presentation.components.container
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -14,6 +15,7 @@ import com.llamasoft.elessa.presentation.factory.UiViewComponent
 @Composable
 fun HomeContainerView(component: HomeContainerComponent) {
     LazyColumn(
+        contentPadding = PaddingValues(bottom = 32.dp),
         modifier = Modifier
             .padding(top = 16.dp, start = 16.dp, end = 16.dp)
             .testTag("HomeContainerTestTag")

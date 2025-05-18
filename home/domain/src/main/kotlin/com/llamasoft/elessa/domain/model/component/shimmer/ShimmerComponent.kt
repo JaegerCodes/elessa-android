@@ -3,6 +3,7 @@ package com.llamasoft.elessa.domain.model.component.shimmer
 import androidx.annotation.Keep
 import com.llamasoft.elessa.domain.model.component.base.ViewComponentType.Companion.CARD_BANNER_M_SHIMMER_COMPONENT
 import com.llamasoft.elessa.domain.model.component.base.ViewComponentType.Companion.CARD_BANNER_XL_SHIMMER_COMPONENT
+import com.llamasoft.elessa.domain.model.component.base.ViewComponentType.Companion.CAROUSEL_SHIMMER_COMPONENT
 import com.llamasoft.elessa.domain.model.component.base.ViewComponentType.Companion.SECTION_TITLE_SHIMMER_COMPONENT
 import com.llamasoft.elessa.domain.model.component.base.ViewComponentType.Companion.TOP_BAR_SHIMMER_COMPONENT
 import com.llamasoft.elessa.model.sdui.ElComponentData
@@ -64,3 +65,16 @@ data class CardBannerMShimmerComponent(
     @Json(name = "properties")
     override val properties: ShimmerComponentProperties? = null
 ) : ShimmerComponent(CARD_BANNER_M_SHIMMER_COMPONENT)
+
+@Keep
+@JsonClass(generateAdapter = true)
+data class CarouselShimmerComponent(
+    @Json(name = "shimmerId")
+    override val shimmerId: String = "",
+    @Json(name = "children")
+    override val children: List<ElViewComponent>? = null,
+    @Json(name = "data")
+    override val data: ElComponentData? = null,
+    @Json(name = "properties")
+    override val properties: ShimmerComponentProperties? = null
+) : ShimmerComponent(CAROUSEL_SHIMMER_COMPONENT)

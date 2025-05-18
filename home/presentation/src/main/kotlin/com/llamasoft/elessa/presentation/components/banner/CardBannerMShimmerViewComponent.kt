@@ -14,7 +14,7 @@ import com.llamasoft.elessa.presentation.factory.ViewComponent
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
 data class CardBannerMShimmerViewComponent(
-    val component: CardBannerMShimmerComponent
+    override val component: CardBannerMShimmerComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {

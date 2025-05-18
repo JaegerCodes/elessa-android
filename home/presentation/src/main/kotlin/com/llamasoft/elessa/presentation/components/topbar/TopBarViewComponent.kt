@@ -5,7 +5,7 @@ import com.llamasoft.elessa.domain.model.component.topbar.TopBarComponent
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 
 data class TopBarViewComponent(
-    val component: TopBarComponent
+    override val component: TopBarComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {

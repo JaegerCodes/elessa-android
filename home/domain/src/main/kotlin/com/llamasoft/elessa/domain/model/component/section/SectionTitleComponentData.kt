@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
 
 @Keep
 data class SectionTitleComponentData(
-    @Json(name = "title")
+    @Json(name = "text")
     val text: String? = null,
     @Json(name = "accessibility")
     val accessibility: List<ElAccessibility>? = null

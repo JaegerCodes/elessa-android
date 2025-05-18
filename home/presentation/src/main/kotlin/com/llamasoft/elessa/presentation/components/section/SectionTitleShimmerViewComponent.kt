@@ -14,7 +14,7 @@ import com.llamasoft.elessa.presentation.factory.ViewComponent
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
 data class SectionTitleShimmerViewComponent(
-    val component: SectionTitleShimmerComponent
+    override val component: SectionTitleShimmerComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {
@@ -28,10 +28,10 @@ data class SectionTitleShimmerViewComponent(
 private fun SectionTitleShimmerView() {
     ShimmerUtils.GetShimmerBlockTitle(
         modifier = Modifier
-            .padding(horizontal = 16.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(0.6f)
+            .padding(bottom = 2.dp)
             .height(48.dp),
-        roundedSize = 16.dp
+        roundedSize = 8.dp
     )
 }
 

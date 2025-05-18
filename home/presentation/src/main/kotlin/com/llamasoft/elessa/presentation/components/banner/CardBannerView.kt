@@ -19,6 +19,7 @@ import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerComponen
 import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerData
 import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerProperties
 import com.llamasoft.elessa.domain.model.component.common.BadgeData
+import com.llamasoft.elessa.presentation.command.ActionCommandViewModel
 import com.llamasoft.elessa.ui.cardlayout.ElCardLayout
 import com.llamasoft.elessa.ui.cardlayout.defaultImageSize
 import com.llamasoft.elessa.ui.cardlayout.defaultSubtitleMaxLines
@@ -28,9 +29,12 @@ import com.llamasoft.elessa.ui.cardlayout.toCardStyleType
 import com.llamasoft.elessa.ui.pill.ElPill
 import com.llamasoft.elessa.ui.status.badge.ElBadge
 import com.llamasoft.elessa.ui.theme.ElessaTheme
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun CardBannerView(component: CardBannerComponent) {
+    val commandViewModel: ActionCommandViewModel = koinViewModel()
+
     val data = component.data
     val size = component.properties?.size.toCardSize()
 
@@ -72,7 +76,11 @@ fun CardBannerView(component: CardBannerComponent) {
                     ElBadge(title = badge.text.orEmpty(), state = "warning")
                 }
             },
-        )
+        ) {
+            commandViewModel.dispatchAllSuspend(
+                component.properties?.actions
+            )
+        }
     }
 }
 

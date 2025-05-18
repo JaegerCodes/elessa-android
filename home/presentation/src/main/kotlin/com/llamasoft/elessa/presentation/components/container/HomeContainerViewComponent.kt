@@ -5,7 +5,7 @@ import com.llamasoft.elessa.domain.model.component.homecontainer.HomeContainerCo
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 
 data class HomeContainerViewComponent(
-    val component: HomeContainerComponent
+    override val component: HomeContainerComponent
 ): ViewComponent {
     @Composable
     override fun Render() {

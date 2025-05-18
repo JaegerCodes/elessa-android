@@ -5,7 +5,7 @@ import com.llamasoft.elessa.domain.model.component.section.SectionTitleComponent
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 
 data class SectionTitleViewComponent(
-    val component: SectionTitleComponent
+    override val component: SectionTitleComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {

@@ -57,6 +57,9 @@ runtimeVersion = "1.8.1"
 # Lottie
 lottieVersion = "3.4.0"
 
+# Material Icons
+meterialIconsVersion = "1.5.4"
+
 [libraries]
 # Android
 androidx-lifecycleRuntime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxVersion" }
@@ -71,6 +74,7 @@ compose-material = { module = "androidx.compose.material3:material3" }
 compose-material-window-size = { module = "androidx.compose.material3:material3-window-size-class" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui = { module = "androidx.compose.ui:ui" }
+material-icons-extended = { module = "androidx.compose.material3:material3-icons-extended", version.ref = "meterialIconsVersion" }
 
 # Coil
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coilVersion" }

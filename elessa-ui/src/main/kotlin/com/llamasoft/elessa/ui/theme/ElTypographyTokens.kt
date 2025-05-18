@@ -168,7 +168,7 @@ internal fun defaultElTypographyTokens(elColorScheme: ElColorScheme) = ElTypogra
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         letterSpacing = 0.sp,
-        color = elColorScheme.onPrimaryContainerVariant,
+        color = elColorScheme.onTertiary,
     ),
     labelSmall = TextStyle(
         fontFamily = ElFontFamilies.Gibson,

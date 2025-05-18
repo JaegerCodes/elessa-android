@@ -2,11 +2,13 @@ package com.llamasoft.elessa.presentation.command
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.airbnb.lottie.BuildConfig
 import com.llamasoft.elessa.model.sdui.ElAction
 import com.llamasoft.elessa.presentation.factory.CommandActionFactory
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.launch
 
 class ActionCommandViewModel(
     val commandFactory: CommandActionFactory
@@ -23,8 +25,10 @@ class ActionCommandViewModel(
         actions?.forEach { dispatch(it) }
     }
 
-    suspend fun dispatchAllSuspend(actions: List<ElAction>) {
-        actions.forEach { _actions.emit(it) }
+    fun dispatchAllSuspend(actions: List<ElAction>?) {
+        viewModelScope.launch {
+            actions?.forEach { _actions.emit(it) }
+        }
     }
 
     fun <T : ElAction> execute(action: T) {

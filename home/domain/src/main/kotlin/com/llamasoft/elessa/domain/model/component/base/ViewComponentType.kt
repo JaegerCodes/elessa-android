@@ -20,10 +20,13 @@ annotation class ViewComponentType {
         const val TOP_BAR_COMPONENT = "TopBarWidget"
         const val TOP_BAR_SHIMMER_COMPONENT = "TopBarShimmerWidget"
         const val HOME_CONTAINER = "HomeContainer"
+        const val HOME_COMPONENTS = "HomeComponents"
         const val SECTION_TITLE = "SectionTitle"
         const val SECTION_TITLE_SHIMMER_COMPONENT = "SectionTitleShimmerWidget"
         const val CARD_BANNER_COMPONENT = "CardBannerWidget"
         const val CARD_BANNER_XL_SHIMMER_COMPONENT = "CardBannerXLShimmerWidget"
         const val CARD_BANNER_M_SHIMMER_COMPONENT = "CardBannerMShimmerWidget"
+        const val CAROUSEL_COMPONENT = "CarouselComponentWidget"
+        const val CAROUSEL_SHIMMER_COMPONENT = "CarouselShimmerComponentWidget"
     }
 }

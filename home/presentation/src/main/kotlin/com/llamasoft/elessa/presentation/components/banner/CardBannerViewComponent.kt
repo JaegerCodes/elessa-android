@@ -5,7 +5,7 @@ import com.llamasoft.elessa.domain.model.component.cardbanner.CardBannerComponen
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 
 data class CardBannerViewComponent(
-    val component: CardBannerComponent
+    override val component: CardBannerComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {

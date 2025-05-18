@@ -1,52 +1,51 @@
-package com.llamasoft.elessa.presentation.components.topbar
+package com.llamasoft.elessa.presentation.components.carousel
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.llamasoft.elessa.domain.model.component.shimmer.TopBarShimmerComponent
+import com.llamasoft.elessa.domain.model.component.shimmer.CarouselShimmerComponent
 import com.llamasoft.elessa.presentation.components.shimmer.ShimmerUtils
 import com.llamasoft.elessa.presentation.components.shimmer.ViewOrShimmer
 import com.llamasoft.elessa.presentation.factory.ViewComponent
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
-data class TopBarShimmerViewComponent(
-    override val component: TopBarShimmerComponent
+data class CarouselShimmerViewComponent(
+    override val component: CarouselShimmerComponent
 ) : ViewComponent {
     @Composable
     override fun Render() {
         ViewOrShimmer(shimmerId = component.shimmerId) {
-            TopBarShimmerView()
+            CarouselShimmerView()
         }
     }
 }
 
 @Composable
-private fun TopBarShimmerView() {
+private fun CarouselShimmerView() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 2.dp, top = 8.dp)
+            .padding(bottom = 2.dp)
     ) {
         ShimmerUtils.GetShimmerBlockTitle(
             modifier = Modifier
-                .fillMaxWidth(0.6f)
-                .height(48.dp)
+                .fillMaxWidth(0.85f)
+                .height(150.dp)
         )
         Spacer(modifier = Modifier.weight(1f))
         ShimmerUtils.GetShimmerBlockTitle(
             modifier = Modifier
-                .width(48.dp)
-                .height(48.dp),
-            roundedSize = 16.dp
+                .fillMaxWidth()
+                .padding(start = 8.dp)
+                .height(150.dp)
         )
     }
 }
@@ -55,8 +54,8 @@ private fun TopBarShimmerView() {
     showBackground = true
 )
 @Composable
-private fun TopBarShimmerViewPreview() {
+fun CarouselShimmerViewPreview() {
     ElessaTheme {
-        TopBarShimmerView()
+        CarouselShimmerView()
     }
 }
