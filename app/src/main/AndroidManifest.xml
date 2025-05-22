@@ -29,9 +29,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="els"/>
-                <data android:host="profile"/>
+                <data android:host="notifications"/>
                 <data android:host="home"/>
-                <data android:host="search"/>
+                <data android:host="checkout"/>
                 <data android:host="user"/>
                 <data android:pathPattern="/.*"/>
             </intent-filter>

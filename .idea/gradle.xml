@@ -25,6 +25,7 @@
             <option value="$PROJECT_DIR$/build-logic" />
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/checkout" />
+            <option value="$PROJECT_DIR$/checkout/presentation" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/accessibility" />
             <option value="$PROJECT_DIR$/core/model" />
@@ -37,6 +38,7 @@
             <option value="$PROJECT_DIR$/home/domain" />
             <option value="$PROJECT_DIR$/home/presentation" />
             <option value="$PROJECT_DIR$/notifications" />
+            <option value="$PROJECT_DIR$/notifications/presentation" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

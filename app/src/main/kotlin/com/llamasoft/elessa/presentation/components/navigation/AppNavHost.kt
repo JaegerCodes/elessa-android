@@ -3,16 +3,16 @@ package com.llamasoft.elessa.presentation.components.navigation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
+import com.llamasoft.elessa.checkout.presentation.screen.CheckoutScreen
+import com.llamasoft.elessa.notifications.presentation.screen.NotificationsScreen
 import com.llamasoft.elessa.presentation.components.screen.DEEPLINK_HOME
 import com.llamasoft.elessa.presentation.components.screen.HomeScreen
 import com.llamasoft.elessa.presentation.components.screen.NAVIGATION_ROUTE_HOME
@@ -35,28 +35,16 @@ fun AppNavHost(
             HomeScreen()
         }
         composable(
-            route = "search",
-            deepLinks = listOf(navDeepLink { uriPattern = "els://search" })
+            route = "checkout",
+            deepLinks = listOf(navDeepLink { uriPattern = "els://checkout" })
         ) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Text(
-                    "Search",
-                    modifier = Modifier.align(Alignment.Center),
-                    style = MaterialTheme.typography.titleLarge
-                )
-            }
+            CheckoutScreen()
         }
         composable(
-            route = "profile",
-            deepLinks = listOf(navDeepLink { uriPattern = "els://profile" })
+            route = "notifications",
+            deepLinks = listOf(navDeepLink { uriPattern = "els://notifications" })
         ) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Text(
-                    "Profile",
-                    modifier = Modifier.align(Alignment.Center),
-                    style = MaterialTheme.typography.titleLarge
-                )
-            }
+            NotificationsScreen()
         }
 
         composable(

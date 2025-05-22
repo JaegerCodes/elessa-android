@@ -40,9 +40,11 @@ dependencies {
     implementation(project(":home:domain"))
     implementation(project(":home:presentation"))
 
+    // Notifications
+    implementation(project(":notifications:presentation"))
 
-    //implementation(project(":notifications"))
-    //implementation(project(":checkout"))
+    // Checkout
+    implementation(project(":checkout:presentation"))
 
     implementation(libs.androidx.lifecycleRuntime.ktx)
 
