@@ -3,6 +3,7 @@ package com.llamasoft.elessa.presentation.components.navigation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -38,7 +39,11 @@ fun AppNavHost(
             deepLinks = listOf(navDeepLink { uriPattern = "els://search" })
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
-                Text("Search", modifier = Modifier.align(Alignment.Center))
+                Text(
+                    "Search",
+                    modifier = Modifier.align(Alignment.Center),
+                    style = MaterialTheme.typography.titleLarge
+                )
             }
         }
         composable(
@@ -46,7 +51,11 @@ fun AppNavHost(
             deepLinks = listOf(navDeepLink { uriPattern = "els://profile" })
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
-                Text("Profile", modifier = Modifier.align(Alignment.Center))
+                Text(
+                    "Profile",
+                    modifier = Modifier.align(Alignment.Center),
+                    style = MaterialTheme.typography.titleLarge
+                )
             }
         }
 

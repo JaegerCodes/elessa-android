@@ -78,7 +78,7 @@ fun CardBannerView(component: CardBannerComponent) {
             },
         ) {
             commandViewModel.dispatchAllSuspend(
-                component.properties?.actions
+                component.data?.actions,
             )
         }
     }
@@ -96,12 +96,12 @@ fun PreviewCardBannerView() {
             subtitle = "Aprovecha hasta el 50% de descuento",
             icon = "https://placekitten.com/200/200",
             pill = null,
+            actions = null,
             badge = BadgeData(
                 text = "Nuevo"
             )
         ),
         properties = CardBannerProperties(
-            actions = null,
             style = "high",
             size = "XL"
         )

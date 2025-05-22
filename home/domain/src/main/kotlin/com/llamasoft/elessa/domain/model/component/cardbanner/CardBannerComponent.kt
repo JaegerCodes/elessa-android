@@ -27,8 +27,6 @@ data class CardBannerComponent(
 
 @Keep
 data class CardBannerProperties(
-    @Json(name = "actions")
-    val actions: List<ElAction>?,
     @Json(name = "style")
     val style: String? = null,
     @Json(name = "size")
@@ -48,5 +46,7 @@ data class CardBannerData(
     @Json(name = "badge")
     val badge: BadgeData? = null,
     @Json(name = "accessibility")
-    val accessibility: List<ElAccessibility>? = null
+    val accessibility: List<ElAccessibility>? = null,
+    @Json(name = "actions")
+    val actions: List<ElAction>?,
 ) : ElComponentData()
