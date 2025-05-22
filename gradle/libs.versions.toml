@@ -10,7 +10,7 @@ composeBomVersion = "2025.04.00"
 navigationComposeVersion = "2.8.9"
 
 # Gradle plugins
-androidGradleVersion = "8.4.2"
+androidGradleVersion = "8.10.0"
 kotlinVersion = "2.0.10"
 kspVersion = "2.0.21-1.0.27"
 detektVersion = "1.22.0"
