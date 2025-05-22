@@ -27,9 +27,8 @@ internal class ElInterceptedResponseCall<S : Any>(
                 } else {
                     val parsedError = try {
                         val errorBody = response.errorBody()
-                        val convertedBody = errorBody?.let { converter.convert(it) }
-                        ElInterceptedResponse.Success(
-                            convertedBody,
+                        ElInterceptedResponse.ApiError(
+                            errorBody,
                             response.code(),
                             response.headers(),
                             response

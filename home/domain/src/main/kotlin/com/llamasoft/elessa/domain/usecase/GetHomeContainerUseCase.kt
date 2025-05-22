@@ -6,7 +6,7 @@ import com.llamasoft.elessa.domain.repository.ViewComponentsRepository
 class GetHomeContainerUseCase(
     private val repository: ViewComponentsRepository
 ) {
-    suspend operator fun invoke(): HomeContainerComponent {
+    suspend operator fun invoke(): Result<HomeContainerComponent> {
         return repository.getHomeContainer()
     }
 }

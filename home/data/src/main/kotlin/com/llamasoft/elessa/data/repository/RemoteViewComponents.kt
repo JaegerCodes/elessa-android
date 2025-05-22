@@ -12,13 +12,23 @@ class RemoteViewComponents(
     private val service: ViewComponentsService,
     private val moshi: Moshi
 ): ViewComponentsRepository {
-    override suspend fun getHomeContainer() = service.getHomeContainer()
-        .mapSuccessOrError {
-            body -> moshi.fromJsonOrError<HomeContainerComponent>(body.string())
-        }
 
-    override suspend fun getHomeComponents(url: String) = service.getHomeComponents()
-        .mapSuccessOrError {
-            body -> moshi.fromJsonOrError<HomeComponents>(body.string())
-        }
+    override suspend fun getHomeContainer(): Result<HomeContainerComponent> {
+        return service.getHomeContainer()
+            .mapSuccessOrError { body ->
+                moshi.fromJsonOrError<HomeContainerComponent>(body.string())
+            }.getOrElse {
+                Result.failure(it)
+            }
+    }
+
+    override suspend fun getHomeComponents(url: String): Result<HomeComponents> {
+        return service.getHomeComponents()
+            .mapSuccessOrError { body ->
+                moshi.fromJsonOrError<HomeComponents>(body.string())
+            }.getOrElse {
+                Result.failure(it)
+            }
+    }
 }
+
