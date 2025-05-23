@@ -28,6 +28,7 @@ local.properties
 # Otros
 *.log
 *.keystore
+.kotlin
 
 # Android Studio
 captures/
