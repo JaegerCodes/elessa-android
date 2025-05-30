@@ -28,7 +28,6 @@ local.properties
 # Otros
 *.log
 *.keystore
-.kotlin
 
 # Android Studio
 captures/
@@ -45,3 +44,5 @@ out/
 
 # MacOS
 ._*
+/.kotlin/
+/.idea/
