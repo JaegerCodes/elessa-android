@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white_700">#FFF3EEF6</color>
+    <color name="launcher_color">#FFF3EEF6</color>
 </resources>
