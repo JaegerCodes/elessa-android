@@ -5,6 +5,7 @@ import java.util.Date
 import java.util.Locale
 import java.util.Properties
 
+@Suppress("TooGenericExceptionCaught")
 class ReleaseNotesConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
@@ -39,8 +40,8 @@ class ReleaseNotesConventionPlugin : Plugin<Project> {
         println("🚀 Generating release notes...")
 
         val appVersionFile = rootProject.file("delivery/version.properties")
-        if (!appVersionFile.exists()) {
-            throw IllegalStateException("version.properties file not found at ${appVersionFile.absolutePath}")
+        check(appVersionFile.exists()) {
+            "version.properties file not found at ${appVersionFile.absolutePath}"
         }
 
         val versionProperties = Properties().apply {

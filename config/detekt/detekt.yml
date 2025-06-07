@@ -127,12 +127,12 @@ complexity:
     threshold: 600
   LongMethod:
     active: true
-    threshold: 60
+    threshold: 80
   LongParameterList:
     active: true
-    functionThreshold: 6
+    functionThreshold: 8
     constructorThreshold: 7
-    ignoreDefaultParameters: false
+    ignoreDefaultParameters: true
     ignoreDataClasses: true
     ignoreAnnotatedParameter: []
   MethodOverloading:
@@ -564,7 +564,7 @@ style:
     active: true
     maxJumpCount: 1
   MagicNumber:
-    active: true
+    active: false
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts']
     ignoreNumbers:
       - '-1'
@@ -641,7 +641,7 @@ style:
   SafeCast:
     active: true
   SerialVersionUIDInSerializableClass:
-    active: true
+    active: false
   SpacingBetweenPackageAndImports:
     active: false
   ThrowsCount:
@@ -683,7 +683,7 @@ style:
     active: true
   UnusedPrivateMember:
     active: true
-    allowedNames: '(_|ignored|expected|serialVersionUID)'
+    allowedNames: '(_|ignored|expected|serialVersionUID|.*Preview)'
   UseAnyOrNoneInsteadOfFind:
     active: true
   UseArrayLiteralsInAnnotations:

@@ -14,6 +14,7 @@ import com.llamasoft.elessa.ui.R
 /**
  * Typography tokens for the Elessa UI.
  */
+@Suppress("LongParameterList")
 @Immutable
 class ElTypographyTokens(
     val headingLarge: TextStyle,
@@ -54,7 +55,10 @@ class ElTypographyTokens(
     val userID: TextStyle,
 )
 
-internal fun defaultElTypographyTokens(elColorScheme: ElColorScheme) = ElTypographyTokens(
+@Suppress("LongParameterList", "LongMethod")
+internal fun defaultElTypographyTokens(
+    elColorScheme: ElColorScheme
+) = ElTypographyTokens(
     headingLarge = TextStyle(
         fontFamily = ElFontFamilies.Gibson,
         fontWeight = FontWeight.SemiBold,

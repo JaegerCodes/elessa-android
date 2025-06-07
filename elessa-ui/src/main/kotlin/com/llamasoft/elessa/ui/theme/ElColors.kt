@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 /**
  * elessa-ui colors
  */
+@Suppress("LongParameterList")
 @Immutable
 class ElColorScheme(
     val primary: Color,

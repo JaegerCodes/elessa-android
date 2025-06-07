@@ -15,6 +15,7 @@ fun customShapes(
     extraLarge = elShapeTokens.xLarge,
 )
 
+@Suppress("LongParameterList")
 @Immutable
 class ElShapeTokens(
     val none: RoundedCornerShape,

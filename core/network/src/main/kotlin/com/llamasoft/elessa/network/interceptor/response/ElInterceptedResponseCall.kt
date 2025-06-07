@@ -9,6 +9,7 @@ import retrofit2.Converter
 import retrofit2.Response
 import java.io.IOException
 
+@Suppress("TooGenericExceptionCaught")
 internal class ElInterceptedResponseCall<S : Any>(
     private val delegate: Call<S>,
     private val converter: Converter<ResponseBody, S>

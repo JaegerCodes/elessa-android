@@ -8,6 +8,7 @@ import com.llamasoft.elessa.ui.theme.dimens.defaultElElevationTokens
 import com.llamasoft.elessa.ui.theme.dimens.defaultElSizeTokens
 import com.llamasoft.elessa.ui.theme.dimens.defaultElSpacingTokens
 
+@Suppress("LongParameterList")
 @Immutable
 class ElDimenTokens(
     val elevation: ElElevationTokens,

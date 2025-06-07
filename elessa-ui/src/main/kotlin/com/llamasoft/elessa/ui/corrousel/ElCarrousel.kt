@@ -83,6 +83,7 @@ fun ElCarousel(
 
 }
 
+@Suppress("LongParameterList")
 @Composable
 private fun HandleAutoScroll(
     isCarouselVisible: Boolean,

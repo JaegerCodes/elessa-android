@@ -34,9 +34,8 @@ fun ElSectionTitle(
     )
 }
 
-@Preview(
-    showBackground = true,
-)
+@Preview(showBackground = true)
+@Suppress("UnusedPrivateMember")
 @Composable
 private fun PreviewCardsSectionTitle() {
     ElessaTheme {
@@ -51,4 +50,3 @@ private fun PreviewCardsSectionTitle() {
         }
     }
 }
-

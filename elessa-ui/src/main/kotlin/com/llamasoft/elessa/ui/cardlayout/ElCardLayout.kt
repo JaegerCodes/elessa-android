@@ -35,6 +35,7 @@ import com.llamasoft.elessa.ui.pill.ElPill
 import com.llamasoft.elessa.ui.status.badge.ElBadge
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 
+@Suppress("LongParameterList")
 @Composable
 fun ElCardLayout(
     modifier: Modifier = Modifier,
@@ -86,6 +87,7 @@ fun ElCardLayout(
 }
 
 @Composable
+@Suppress("LongParameterList")
 private fun StyledCardContent(
     title: String?,
     titleStyle: TextStyle,
@@ -123,6 +125,7 @@ private fun StyledCardContent(
     }
 }
 
+@Suppress("LongParameterList")
 @Composable
 fun SubtitleContainer(
     subtitle: String?,
@@ -152,6 +155,7 @@ fun SubtitleContainer(
     }
 }
 
+@Suppress("LongParameterList")
 @Composable
 fun TitleContainer(
     title: String?,
@@ -180,7 +184,11 @@ fun TitleContainer(
     }
 }
 
-@Preview(showBackground = true, widthDp = 516)
+@Preview(
+    showBackground = true,
+    widthDp = 516
+)
+@Suppress("UnusedPrivateMember")
 @Composable
 private fun PreviewXLCard(
     @PreviewParameter(LoremIpsum::class)
@@ -260,6 +268,7 @@ private fun PreviewXLCard(
 }
 
 @Preview(showBackground = true, widthDp = 500)
+@Suppress("UnusedPrivateMember")
 @Composable
 private fun PreviewMCard(
     @PreviewParameter(LoremIpsum::class)

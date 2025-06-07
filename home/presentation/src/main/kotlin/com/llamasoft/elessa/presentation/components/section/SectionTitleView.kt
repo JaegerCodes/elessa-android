@@ -18,9 +18,7 @@ fun SectionTitleView(
     )
 }
 
-@Preview(
-    showBackground = true,
-)
+@Preview(showBackground = true)
 @Composable
 private fun SectionTitlePreview() {
     ElessaTheme {

@@ -1,10 +1,11 @@
+
 import com.android.build.api.dsl.ApplicationExtension
 import com.llamasoft.elessa.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
 
@@ -26,7 +27,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 defaultConfig.apply {
                     targetSdk = 35
                     versionCode = versionProperties["CODE"].toString().toInt()
-                    versionName = "${versionProperties["MAJOR"]}.${versionProperties["MINOR"]}.${versionProperties["PATCH"]}"
+                    versionName =
+                        "${versionProperties["MAJOR"]}.${versionProperties["MINOR"]}.${versionProperties["PATCH"]}"
                 }
             }
         }

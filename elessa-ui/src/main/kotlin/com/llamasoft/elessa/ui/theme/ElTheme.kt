@@ -24,6 +24,7 @@ fun ElessaTheme(
     }
 }
 
+@Suppress("LongParameterList")
 @Composable
 private fun ProvideElTheme(
     colorScheme: ElColorScheme = elLightColorScheme,

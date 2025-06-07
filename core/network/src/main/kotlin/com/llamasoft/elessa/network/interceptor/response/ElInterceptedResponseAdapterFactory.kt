@@ -14,18 +14,22 @@ class ElInterceptedResponseAdapterFactory : CallAdapter.Factory() {
         annotations: Array<Annotation>,
         retrofit: Retrofit
     ): CallAdapter<*, *>? {
-        if (Call::class.java != getRawType(returnType)) return null
-        if (returnType !is ParameterizedType) return null
+        var result: CallAdapter<*, *>? = null
 
-        val responseType = getParameterUpperBound(0, returnType)
-        if (getRawType(responseType) != ElInterceptedResponse::class.java) return null
-        if (responseType !is ParameterizedType) return null
-
-        val successType = getParameterUpperBound(0, responseType)
-
-        val converter: Converter<ResponseBody, Any> =
-            retrofit.responseBodyConverter(successType, annotations)
-
-        return ElInterceptedResponseAdapter(successType, converter)
+        if (Call::class.java == getRawType(returnType) &&
+            returnType is ParameterizedType
+        ) {
+            val responseType = getParameterUpperBound(0, returnType)
+            if (getRawType(responseType) == ElInterceptedResponse::class.java &&
+                responseType is ParameterizedType
+            ) {
+                val successType = getParameterUpperBound(0, responseType)
+                val converter: Converter<ResponseBody, Any> =
+                    retrofit.responseBodyConverter(successType, annotations)
+                result = ElInterceptedResponseAdapter(successType, converter)
+            }
+        }
+        return result
     }
 }
+

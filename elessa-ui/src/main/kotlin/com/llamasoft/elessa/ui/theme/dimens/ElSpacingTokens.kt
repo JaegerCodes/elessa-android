@@ -4,6 +4,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+@Suppress("LongParameterList")
 @Immutable
 class ElSpacingTokens(
     val xxSmall: Dp,

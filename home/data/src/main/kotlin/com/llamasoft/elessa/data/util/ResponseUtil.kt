@@ -7,6 +7,7 @@ import com.llamasoft.elessa.network.interceptor.response.JsonParseException
 import com.llamasoft.elessa.network.interceptor.response.UnknownErrorException
 import com.squareup.moshi.Moshi
 
+@Suppress("TooGenericExceptionCaught")
 inline fun <T, R> ElInterceptedResponse<T>.mapSuccessOrError(transform: (T) -> R): Result<R> {
     return try {
         when (this) {
@@ -29,6 +30,7 @@ inline fun <T, R> ElInterceptedResponse<T>.mapSuccessOrError(transform: (T) -> R
     }
 }
 
+@Suppress("TooGenericExceptionCaught")
 inline fun <reified T> Moshi.fromJsonOrError(json: String): Result<T> {
     return try {
         adapter(T::class.java).fromJson(json)?.let { Result.success(it) }

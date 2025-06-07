@@ -1,11 +1,21 @@
 
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import io.gitlab.arturbosch.detekt.DetektPlugin
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
+import io.gitlab.arturbosch.detekt.report.ReportMergeTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.getValue
+import org.gradle.kotlin.dsl.provideDelegate
+import org.gradle.kotlin.dsl.registering
+import org.gradle.kotlin.dsl.withType
 
 class DetektConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        /*with(target) {
+        with(target) {
             pluginManager.apply("io.gitlab.arturbosch.detekt")
             extensions.configure<DetektExtension> {
                 toolVersion = "1.22.0"
@@ -29,7 +39,8 @@ class DetektConventionPlugin : Plugin<Project> {
             }
 
             val reportMerge by tasks.registering(ReportMergeTask::class) {
-                output.set(rootProject.layout.buildDirectory.file("reports/detekt/merge.xml")) // or "reports/detekt/merge.sarif"
+                output.set(rootProject.layout.buildDirectory.file("reports/detekt/merge.xml"))
+            // or "reports/detekt/merge.sarif"
             }
 
             subprojects {
@@ -46,7 +57,7 @@ class DetektConventionPlugin : Plugin<Project> {
                     }
                 }
 
-                plugins.withType<io.gitlab.arturbosch.detekt.DetektPlugin> {
+                plugins.withType<DetektPlugin> {
                     tasks.withType<Detekt> { // Sadly it has to be eager.
                         finalizedBy(reportMerge)
 
@@ -56,6 +67,6 @@ class DetektConventionPlugin : Plugin<Project> {
                     }
                 }
             }
-        }*/
+        }
     }
 }

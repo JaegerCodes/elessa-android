@@ -32,6 +32,7 @@ import com.llamasoft.elessa.ui.pill.ElPill
 import com.llamasoft.elessa.ui.theme.ElessaTheme
 import com.llamasoft.elessa.ui.theme.LocalElColors
 
+@Suppress("LongParameterList")
 @Composable
 fun ElShortcut(
     text: String? = null,

@@ -110,7 +110,12 @@ private fun Project.configureJacoco() {
     }
 }
 
-private fun Project.createCoverageTask(testTaskName: String, variantName: String, flavorName: String, jacocoRules: JacocoRules) {
+private fun Project.createCoverageTask(
+    testTaskName: String,
+    variantName: String,
+    flavorName: String,
+    jacocoRules: JacocoRules
+) {
     val jacocoCoverage = tasks.create("jacoco${flavorName.capitalized()}Coverage", JacocoReport::class.java) {
         dependsOn(testTaskName)
         val buildDir = layout.buildDirectory
@@ -192,5 +197,5 @@ private fun getMinBranchCodeCoverage(jacocoRules: JacocoRules, projectName: Stri
 ).toBigDecimal()
 
 private fun getMinInstructionCodeCoverage(jacocoRules: JacocoRules, projectName: String): BigDecimal = (
-        jacocoRules.instructions.modules.find { it.module == projectName }?.threshold ?: jacocoRules.instructions.threshold
-        ).toBigDecimal()
+        jacocoRules.instructions.modules.find { it.module == projectName }?.threshold
+            ?: jacocoRules.instructions.threshold).toBigDecimal()
