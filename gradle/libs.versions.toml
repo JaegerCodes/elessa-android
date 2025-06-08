@@ -1,5 +1,9 @@
 [versions]
+# Convention plugins
+conventionsVersion = "0.0.1"
+
 # Android
+conventionVersion = "0.0.1"
 koinAndroidxComposeVersion = "3.5.6"
 lifecycleRuntimeKtxVersion = "2.8.7"
 annotationJvmVersion = "1.9.1"
@@ -127,12 +131,25 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtxVersion" }
 
+#
+elessa-convention = { module = "com.llamasoft.elessa.buildlogic:convention", version.ref = "conventionVersion" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradleVersion" }
 android-library = { id = "com.android.library", version.ref = "androidGradleVersion" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinVersion" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+llamasoft-android-application = { id = "llamasoft.android.application", version.ref = "conventionsVersion" }
+llamasoft-android-library = { id = "llamasoft.android.library", version.ref = "conventionsVersion" }
+llamasoft-android-compose = { id = "llamasoft.android.compose", version.ref = "conventionsVersion" }
+llamasoft-library-data = { id = "llamasoft.library.data", version.ref = "conventionsVersion" }
+llamasoft-library-presentation = { id = "llamasoft.library.presentation", version.ref = "conventionsVersion" }
+llamasoft-jacoco = { id = "llamasoft.android.jacoco", version.ref = "conventionsVersion" }
+llamasoft-library-jacoco = { id = "llamasoft.library.jacoco", version.ref = "conventionsVersion" }
+llamasoft-detekt = { id = "llamasoft.detekt", version.ref = "conventionsVersion" }
+llamasoft-koin = { id = "llamasoft.koin", version.ref = "conventionsVersion" }
+llamasoft-release-notes = { id = "llamasoft.release.notes", version.ref = "conventionsVersion" }
 
 [bundles]
 compose-bundle-ui = ["compose-ui", "compose-material", "compose-material-window-size", "compose-tooling-preview"]

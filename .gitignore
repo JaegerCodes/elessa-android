@@ -5,6 +5,7 @@
 
 # Archivos locales del entorno
 local.properties
+custom.modules.properties
 .DS_Store
 
 # Build outputs

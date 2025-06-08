@@ -1,5 +1,4 @@
 pluginManagement {
-    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -10,6 +9,22 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
+        maven {
+            url = uri("https://cb4d-179-6-6-210.ngrok-free.app/artifactory/libs-release-local")
+            credentials {
+                username = "admin"
+                password = "P7WxdLiZKSWD2yf"
+            }
+        }
+    }
+
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == "llamasoft") {
+                useModule("com.llamasoft.elessa.buildlogic:convention:${requested.version}")
+            }
+        }
     }
 }
 dependencyResolutionManagement {
